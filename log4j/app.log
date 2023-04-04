@@ -1,1 +1,10 @@
-2023-03-29 13:50:30 INFO  Remote connection successful.
+2023-04-04 15:52:02 INFO  Got rds_hostname from properties
+2023-04-04 15:52:02 INFO  Got rds_db_name from properties
+2023-04-04 15:52:02 INFO  Got rds_username from properties
+2023-04-04 15:52:02 INFO  Got rds_password from properties
+2023-04-04 15:52:02 INFO  Got rds_hostname from properties
+2023-04-04 15:52:02 INFO  Got rds_port from properties
+2023-04-04 15:52:04 INFO  Remote connection successful.
+2023-04-04 15:52:04 INFO  Enter name
+2023-04-04 15:52:09 INFO  Find time is = 0.22 seconds
+2023-04-04 15:52:09 INFO  Address is Епіцентр Київ с. Петропавлівська Борщагівка, вул. Кришталева, 6

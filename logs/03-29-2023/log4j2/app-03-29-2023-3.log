@@ -1,17 +1,18 @@
-2023-03-29 13:43:23 INFO  Loaded properties file
-2023-03-29 13:43:23 INFO  Getting properties
-2023-03-29 13:43:23 INFO  Got rds_hostname from properties
-2023-03-29 13:43:23 INFO  Got rds_db_name from properties
-2023-03-29 13:43:23 INFO  Got rds_username from properties
-2023-03-29 13:43:23 INFO  Got rds_password from properties
-2023-03-29 13:43:23 INFO  Got rds_hostname from properties
-2023-03-29 13:43:23 INFO  Got rds_port from properties
-2023-03-29 13:43:33 WARN  org.postgresql.util.PSQLException: Ошибка при попытке подсоединения.
-2023-03-29 13:50:27 INFO  Loaded properties file
-2023-03-29 13:50:27 INFO  Getting properties
-2023-03-29 13:50:27 INFO  Got rds_hostname from properties
-2023-03-29 13:50:27 INFO  Got rds_db_name from properties
-2023-03-29 13:50:27 INFO  Got rds_username from properties
-2023-03-29 13:50:27 INFO  Got rds_password from properties
-2023-03-29 13:50:27 INFO  Got rds_hostname from properties
-2023-03-29 13:50:27 INFO  Got rds_port from properties
+2023-03-29 17:37:09 WARN  org.postgresql.util.PSQLException: ERROR: relation "location" does not exist
+  Позиция: 13
+2023-03-29 17:37:09 WARN  org.postgresql.util.PSQLException: ERROR: relation "location" does not exist
+  Позиция: 13
+2023-03-29 17:39:36 INFO  Loaded properties file
+2023-03-29 17:39:36 INFO  Getting properties
+2023-03-29 17:39:36 INFO  Got rds_hostname from properties
+2023-03-29 17:39:36 INFO  Got rds_db_name from properties
+2023-03-29 17:39:36 INFO  Got rds_username from properties
+2023-03-29 17:39:36 INFO  Got rds_password from properties
+2023-03-29 17:39:36 INFO  Got rds_hostname from properties
+2023-03-29 17:39:36 INFO  Got rds_port from properties
+2023-03-29 17:39:39 INFO  Remote connection successful.
+2023-03-29 17:39:39 WARN  org.postgresql.util.PSQLException: ERROR: relation "location" does not exist
+  Позиция: 13
+2023-03-29 17:39:40 WARN  org.postgresql.util.PSQLException: ERROR: relation "location" does not exist
+  Позиция: 13
+2023-03-29 17:43:23 INFO  Loaded properties file

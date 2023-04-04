@@ -1,21 +1,16 @@
-2023-03-28 17:15:04 INFO  start
-2023-03-28 17:21:53 INFO  Loaded properties file
-2023-03-28 17:21:53 INFO  Getting properties
-2023-03-28 17:21:53 INFO  Got RDS_HOSTNAME from properties
-2023-03-28 17:29:23 INFO  Loaded properties file
-2023-03-28 17:29:23 INFO  Getting properties
-2023-03-28 17:29:23 INFO  Got RDS_HOSTNAME from properties
-2023-03-28 22:19:33 INFO  Loaded properties file
-2023-03-28 22:19:33 INFO  Getting properties
-2023-03-28 22:19:33 INFO  Got RDS_HOSTNAME from properties
-2023-03-29 12:34:20 INFO  Loaded properties file
-2023-03-29 12:34:20 INFO  Getting properties
-2023-03-29 12:34:20 INFO  Got RDS_HOSTNAME from properties
-2023-03-29 12:36:09 INFO  Loaded properties file
-2023-03-29 12:36:09 INFO  Getting properties
-2023-03-29 12:36:09 INFO  Got RDS_HOSTNAME from properties
-2023-03-29 12:56:24 INFO  Loaded properties file
-2023-03-29 12:56:24 INFO  Getting properties
-2023-03-29 12:56:24 INFO  Got RDS_HOSTNAME from properties
-2023-03-29 13:36:45 INFO  Loaded properties file
-2023-03-29 13:36:45 INFO  Getting properties
+2023-03-29 17:35:13 INFO  Loaded properties file
+2023-03-29 17:35:13 INFO  Getting properties
+2023-03-29 17:35:13 INFO  Got rds_hostname from properties
+2023-03-29 17:35:13 INFO  Got rds_db_name from properties
+2023-03-29 17:35:13 INFO  Got rds_username from properties
+2023-03-29 17:35:13 INFO  Got rds_password from properties
+2023-03-29 17:35:13 INFO  Got rds_hostname from properties
+2023-03-29 17:35:13 INFO  Got rds_port from properties
+2023-03-29 17:35:16 INFO  Remote connection successful.
+2023-03-29 17:35:16 WARN  java.sql.BatchUpdateException: Batch entry 0 INSERT INTO public.location (address) VALUES (p) was aborted: ERROR: relation "public.location" does not exist
+  Позиция: 13  Call getNextException to see other errors in the batch.
+2023-03-29 17:36:21 INFO  Loaded properties file
+2023-03-29 17:36:21 INFO  Getting properties
+2023-03-29 17:36:21 INFO  Got rds_hostname from properties
+2023-03-29 17:36:21 INFO  Got rds_db_name from properties
+2023-03-29 17:36:21 INFO  Got rds_username from properties
