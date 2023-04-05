@@ -3,6 +3,8 @@ package com.ua.glebkorobov.filling_tables;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
+import com.ua.glebkorobov.GetProperty;
+import com.ua.glebkorobov.exceptions.FileFindException;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -16,15 +18,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class FillTypeTable implements Filler {
+public class FillTypeTable {
 
     private static final Logger logger = LogManager.getLogger(FillTypeTable.class);
 
-    @Override
-    public void fill(Connection connection, int count) {
+    public void fill(Connection connection, CSVReader reader) {
         try {
-            CSVReader reader = new CSVReaderBuilder(new FileReader("tables/types.csv")).build();
-
             connection.setAutoCommit(true);
             PreparedStatement statement =
                     connection.prepareStatement("INSERT INTO type (name)\n" +
@@ -50,10 +49,19 @@ public class FillTypeTable implements Filler {
             logger.warn(e.toString());
         } catch (FileNotFoundException e) {
             logger.warn(e.toString());
-            throw new RuntimeException();
+            throw new FileFindException(e);
         } catch (IOException | CsvException e) {
             logger.warn(e.toString());
             throw new RuntimeException(e);
         }
+    }
+
+    public CSVReader createCSVReader() {
+        try {
+            return new CSVReaderBuilder(new FileReader("tables/types.csv")).build();
+        } catch (FileNotFoundException e) {
+            logger.warn(e.toString());
+        }
+        return null;
     }
 }

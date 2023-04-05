@@ -7,7 +7,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.Mockito.*;
 
 class FindProductTest {
@@ -57,7 +58,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();
@@ -76,7 +77,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();
@@ -92,7 +93,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();

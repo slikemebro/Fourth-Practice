@@ -1,5 +1,6 @@
 package com.ua.glebkorobov;
 
+import com.ua.glebkorobov.exceptions.FileFindException;
 import org.apache.ibatis.jdbc.ScriptRunner;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -29,6 +30,7 @@ public class DoScripts {
             logger.info("Scripts was done");
         } catch (FileNotFoundException e) {
             logger.warn(e.toString());
+            throw new FileFindException(e);
         }
     }
 

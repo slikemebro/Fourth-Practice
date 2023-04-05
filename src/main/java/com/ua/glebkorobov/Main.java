@@ -12,17 +12,19 @@ public class Main {
 
     private static final String PRODUCT_NAME = "name";
 
+    private static final GetProperty property = new GetProperty("myProp.properties");
+
 
     public static void main(String[] args) {
         CreateConnectionWithDB connectionWithDB = new CreateConnectionWithDB();
-        GetProperty property = new GetProperty("myProp.properties");
+
         Connection connection = connectionWithDB.getRemoteConnection(property);
         FindProduct findProduct = new FindProduct();
 
         String productName = System.getProperty(PRODUCT_NAME);
         logger.info("Get system property");
 
-        if(productName == null) {
+        if (productName == null) {
             logger.info("Got property was null. Enter by console");
             Scanner sc = new Scanner(System.in);
             logger.info("Enter name");
