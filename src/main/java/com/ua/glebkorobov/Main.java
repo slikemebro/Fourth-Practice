@@ -10,6 +10,8 @@ public class Main {
 
     private static final Logger logger = LogManager.getLogger(Main.class);
 
+    private static final String PRODUCT_NAME = "name";
+
 
     public static void main(String[] args) {
         CreateConnectionWithDB connectionWithDB = new CreateConnectionWithDB();
@@ -17,10 +19,15 @@ public class Main {
         Connection connection = connectionWithDB.getRemoteConnection(property);
         FindProduct findProduct = new FindProduct();
 
+        String productName = System.getProperty(PRODUCT_NAME);
+        logger.info("Get system property");
 
-        Scanner sc = new Scanner(System.in);
-        logger.info("Enter name");
-        String productName = sc.next();
+        if(productName == null) {
+            logger.info("Got property was null. Enter by console");
+            Scanner sc = new Scanner(System.in);
+            logger.info("Enter name");
+            productName = sc.next();
+        }
 
         String result = findProduct.getResult(findProduct.find(connection, productName));
 
