@@ -3,6 +3,7 @@ package com.ua.glebkorobov.filling_tables;
 import com.ua.glebkorobov.CreateConnectionWithDB;
 import com.ua.glebkorobov.DoScripts;
 import com.ua.glebkorobov.GetProperty;
+import com.ua.glebkorobov.dto.ValidateDto;
 
 import java.sql.Connection;
 
@@ -19,10 +20,11 @@ public class DoFill {
         doScripts.runScript("DBFillLocation.sql");
 
         FillTypeTable fillTypeTable = new FillTypeTable();
-        fillTypeTable.fill(connection, 500);
+        fillTypeTable.fill(connection, fillTypeTable.createCSVReader());
 
-        FillGoodsTable fillGoodsTable = new FillGoodsTable();
-        fillGoodsTable.fill(connection, 3000000);
+        FillGoodsTable fillGoodsTable = new FillGoodsTable(new GetProperty("myProp.properties"),
+                new ValidateDto());
+        fillGoodsTable.fill(connection);
 
         connectionWithDB.closeConnection(connection);
     }

@@ -11,12 +11,11 @@ class FillerTest {
     @Test
     void testFill() {
         Connection mockConnection = mock(Connection.class);
-        int count = 10;
         Filler filler = mock(Filler.class);
 
-        filler.fill(mockConnection, count);
+        filler.fill(mockConnection);
 
-        verify(filler, times(1)).fill(mockConnection, count);
+        verify(filler, times(1)).fill(mockConnection);
     }
 
 }
