@@ -58,7 +58,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();
@@ -77,7 +77,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();
@@ -93,7 +93,7 @@ class FindProductTest {
 
         String productName = "Test";
         FindProduct findProduct = new FindProduct();
-        ResultSet result = findProduct.find(mockedConnection, productName);
+        findProduct.find(mockedConnection, productName);
 
         verify(mockedStatement).setString(1, productName);
         verify(mockedStatement).executeQuery();
