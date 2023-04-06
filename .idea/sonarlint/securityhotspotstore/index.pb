@@ -5,8 +5,6 @@ M
 src/main/resources/log4j2.xml,3\6\36b9f0d33e4b7e602e3cd701314fae81543db66f
 r
 Bsrc/main/java/com/ua/glebkorobov/exceptions/FileFindException.java,b\e\be8d4071264024e1c041b4081e40ee4958bffa88
-a
-1src/main/java/com/ua/glebkorobov/GetProperty.java,5\7\571d5ebf570620db14f88dd5b70faa0afb5f7aca
 [
 +logs/04-03-2023/log4j2/app-04-03-2023-2.log,3\6\363571c4b3bc26d92883527c08f99e896fe81a36
 [
@@ -87,3 +85,23 @@ a
 ,logs/04-02-2023/log4j2/app-04-02-2023-17.log,0\a\0a481fabb84944d7997e9123db162a5069b49d00
 \
 ,logs/04-02-2023/log4j2/app-04-02-2023-16.log,a\f\af89b84ff5da8bf509113f3ca2f71bff97c516c1
+@
+tables/types.csv,9\3\9347305c090a8f6896bacc320f1b6f4c8af65f0e
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+a
+1src/main/java/com/ua/glebkorobov/dto/Product.java,3\4\34e134e864069f673b14bddfc15f777587626842
+e
+5src/main/java/com/ua/glebkorobov/dto/ValidateDto.java,3\0\300df0e8439b3f427b41d7f1c15c8caa139a42f8
+a
+1src/main/java/com/ua/glebkorobov/GetProperty.java,5\7\571d5ebf570620db14f88dd5b70faa0afb5f7aca
+s
+Csrc/main/java/com/ua/glebkorobov/filling_tables/FillGoodsTable.java,f\7\f775adafa068e61f5acd580424b2bb4e373ee047
+Z
+*src/main/java/com/ua/glebkorobov/Main.java,a\9\a93951f43c0f3878565fdfb27fb4beb170a209e6
+k
+;src/main/java/com/ua/glebkorobov/filling_tables/Filler.java,3\d\3d1abbb09acf39b41950f2b5d20da60d7d3e16c9
+k
+;src/main/java/com/ua/glebkorobov/filling_tables/DoFill.java,1\2\12b8f8bcdec6b246b8edcd847364ff9fc3a7ff48
+r
+Bsrc/main/java/com/ua/glebkorobov/filling_tables/FillTypeTable.java,4\3\430766379ce7c5d9a75400a7568d1cdb00b97901
