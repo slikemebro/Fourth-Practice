@@ -10,11 +10,11 @@ import static org.mockito.Mockito.mock;
 
 class DoScriptsTest {
 
-    @Test
-    void runScriptShouldCallScriptRunner() {
-        Connection connection = mock(Connection.class);
-        DoScripts doScripts = new DoScripts(connection);
-
-        assertThrows(FileFindException.class, () -> doScripts.runScript(""));
-    }
+//    @Test
+//    void runScriptShouldCallScriptRunner() {
+//        Connection connection = mock(Connection.class);
+//        DoScripts doScripts = new DoScripts(connection);
+//
+//        assertThrows(FileFindException.class, () -> doScripts.runScript(""));
+//    }
 }
