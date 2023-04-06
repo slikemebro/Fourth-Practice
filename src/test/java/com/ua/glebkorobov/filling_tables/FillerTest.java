@@ -8,14 +8,14 @@ import static org.mockito.Mockito.*;
 
 class FillerTest {
 
-//    @Test
-//    void testFill() {
-//        Connection mockConnection = mock(Connection.class);
-//        Filler filler = mock(Filler.class);
-//
-//        filler.fill(mockConnection);
-//
-//        verify(filler, times(1)).fill(mockConnection);
-//    }
+    @Test
+    void testFill() {
+        Connection mockConnection = mock(Connection.class);
+        Filler filler = mock(Filler.class);
+
+        filler.fill(mockConnection);
+
+        verify(filler, times(1)).fill(mockConnection);
+    }
 
 }
