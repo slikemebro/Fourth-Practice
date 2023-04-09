@@ -40,6 +40,7 @@ public class CreateConnectionWithDB {
             connection.close();
         } catch (SQLException e) {
             logger.warn(e.toString());
+            throw new CreateDBConnectionException(e);
         }
     }
 }

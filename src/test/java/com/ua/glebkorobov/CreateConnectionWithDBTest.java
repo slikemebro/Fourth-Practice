@@ -1,11 +1,13 @@
 package com.ua.glebkorobov;
 
+import com.ua.glebkorobov.exceptions.CreateDBConnectionException;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 class CreateConnectionWithDBTest {
@@ -20,6 +22,15 @@ class CreateConnectionWithDBTest {
         verify(mockConnection, times(1)).close();
     }
 
+    @Test
+    void testCloseConnectionException() throws SQLException {
+        CreateConnectionWithDB example = new CreateConnectionWithDB();
+        Connection mockConnection = mock(Connection.class);
+
+        doThrow(new SQLException()).when(mockConnection).close();
+
+        assertThrows(CreateDBConnectionException.class, () -> example.closeConnection(mockConnection));
+    }
 
     @Test
     void testGetRemoteConnectionMissingValues() {
