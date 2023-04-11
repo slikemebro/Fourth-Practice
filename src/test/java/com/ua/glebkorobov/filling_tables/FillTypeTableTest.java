@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
@@ -37,9 +38,12 @@ class FillTypeTableTest {
         fillTypesTable.fill(connectionMock, csvReaderMock);
 
         verify(statementMock, times(2)).setString(eq(1), anyString());
-        verify(statementMock, times(2)).setString(eq(2), anyString());
         verify(statementMock, times(2)).addBatch();
-        verify(statementMock).executeBatch();
+        verify(statementMock, times(1)).executeBatch();
+        verify(statementMock, times(1)).close();
+        verify(connectionMock, times(1)).commit();
+        verify(connectionMock, times(1)).setAutoCommit(false);
+        verify(csvReaderMock, times(1)).readAll();
     }
 
     @Test
@@ -56,4 +60,10 @@ class FillTypeTableTest {
         assertThrows(FileFindException.class, () -> fillTypesTable.fill(connectionMock, csvReaderMock));
     }
 
+    @Test
+    void testCreateCSVReader() {
+        FillTypeTable fillTypeTable = new FillTypeTable();
+
+        assertNotNull(fillTypeTable.createCSVReader());
+    }
 }

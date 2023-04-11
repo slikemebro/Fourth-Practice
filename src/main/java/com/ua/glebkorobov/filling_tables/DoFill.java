@@ -3,7 +3,6 @@ package com.ua.glebkorobov.filling_tables;
 import com.ua.glebkorobov.CreateConnectionWithDB;
 import com.ua.glebkorobov.DoScripts;
 import com.ua.glebkorobov.GetProperty;
-import com.ua.glebkorobov.dto.ValidateDto;
 
 import java.sql.Connection;
 
@@ -22,8 +21,7 @@ public class DoFill {
         FillTypeTable fillTypeTable = new FillTypeTable();
         fillTypeTable.fill(connection, fillTypeTable.createCSVReader());
 
-        FillGoodsTable fillGoodsTable = new FillGoodsTable(new GetProperty("myProp.properties"),
-                new ValidateDto());
+        FillGoodsTable fillGoodsTable = new FillGoodsTable(new GetProperty("myProp.properties"));
         fillGoodsTable.fill(connection);
 
         connectionWithDB.closeConnection(connection);

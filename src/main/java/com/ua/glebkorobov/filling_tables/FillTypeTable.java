@@ -3,7 +3,6 @@ package com.ua.glebkorobov.filling_tables;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import com.opencsv.exceptions.CsvException;
-import com.ua.glebkorobov.GetProperty;
 import com.ua.glebkorobov.exceptions.FileFindException;
 import org.apache.commons.lang3.time.StopWatch;
 import org.apache.logging.log4j.LogManager;
@@ -24,26 +23,33 @@ public class FillTypeTable {
 
     public void fill(Connection connection, CSVReader reader) {
         try {
-            connection.setAutoCommit(true);
+            int counter = 0;
+            connection.setAutoCommit(false);
             PreparedStatement statement =
-                    connection.prepareStatement("INSERT INTO type (name)\n" +
-                            "SELECT ?\n" +
-                            "WHERE NOT EXISTS\n" +
-                            "    (SELECT * FROM type WHERE name = ?);");
+                    connection.prepareStatement("insert into type (name) values(?);");
 
             List<String[]> types = reader.readAll();
 
             for (String[] type : types) {
+                if (counter > 100) {
+                    statement.executeBatch();
+                    logger.info("batch was execute");
+                    counter = 0;
+                }
                 statement.setString(1, type[0]);
-                statement.setString(2, type[0]);
                 statement.addBatch();
+                counter++;
             }
+
 
             StopWatch watch = StopWatch.createStarted();
 
             statement.executeBatch();
+            connection.commit();
+
             logger.info("Fill types time is = {} seconds", watch.getTime(TimeUnit.MILLISECONDS) * 0.001);
             watch.stop();
+
             statement.close();
         } catch (SQLException e) {
             logger.warn(e.toString());

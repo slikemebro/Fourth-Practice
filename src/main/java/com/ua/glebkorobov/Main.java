@@ -28,7 +28,7 @@ public class Main {
             logger.info("Got property was null. Enter by console");
             Scanner sc = new Scanner(System.in);
             logger.info("Enter name");
-            productName = sc.next();
+            productName = sc.nextLine();
         }
 
         String result = findProduct.getResult(findProduct.find(connection, productName));
