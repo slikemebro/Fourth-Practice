@@ -85,8 +85,6 @@ Bsrc/main/java/com/ua/glebkorobov/exceptions/FileFindException.java,b\e\be8d407
 ,logs/04-02-2023/log4j2/app-04-02-2023-17.log,0\a\0a481fabb84944d7997e9123db162a5069b49d00
 \
 ,logs/04-02-2023/log4j2/app-04-02-2023-16.log,a\f\af89b84ff5da8bf509113f3ca2f71bff97c516c1
-7
-pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 a
 1src/main/java/com/ua/glebkorobov/GetProperty.java,5\7\571d5ebf570620db14f88dd5b70faa0afb5f7aca
 B
@@ -95,8 +93,6 @@ c
 3src/test/java/com/ua/glebkorobov/DoScriptsTest.java,4\6\4635e0eaee2effaef7cdc37a5c88ffb777d58404
 e
 5src/test/java/com/ua/glebkorobov/FindProductTest.java,e\f\efa2bbebb2bce2fd082ae0513c9030d6987b8554
-@
-tables/types.csv,9\3\9347305c090a8f6896bacc320f1b6f4c8af65f0e
 B
 DBCreateTables.sql,e\3\e341d1bcbd8d3f0b5bc9f66133689373d989ec2b
 r
