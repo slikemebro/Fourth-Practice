@@ -186,7 +186,6 @@ public class FillGoodsTable {
                 counterForRequest += countOfProp;
 
                 if (counterForRequest >= sizeOfMulti * countOfProp) {
-                    logger.info("batched");
                     statement.addBatch();
                     counterForBatch++;
                     counterForRequest = 1;
