@@ -3,8 +3,6 @@ T
 $src/main/resources/myProp.properties,3\6\36e6b82a7c6f909a0de52fabc70d8f2ef0be9e83
 M
 src/main/resources/log4j2.xml,3\6\36b9f0d33e4b7e602e3cd701314fae81543db66f
-r
-Bsrc/main/java/com/ua/glebkorobov/exceptions/FileFindException.java,b\e\be8d4071264024e1c041b4081e40ee4958bffa88
 [
 +logs/04-03-2023/log4j2/app-04-03-2023-2.log,3\6\363571c4b3bc26d92883527c08f99e896fe81a36
 [
@@ -85,17 +83,9 @@ Bsrc/main/java/com/ua/glebkorobov/exceptions/FileFindException.java,b\e\be8d407
 ,logs/04-02-2023/log4j2/app-04-02-2023-17.log,0\a\0a481fabb84944d7997e9123db162a5069b49d00
 \
 ,logs/04-02-2023/log4j2/app-04-02-2023-16.log,a\f\af89b84ff5da8bf509113f3ca2f71bff97c516c1
-a
-1src/main/java/com/ua/glebkorobov/GetProperty.java,5\7\571d5ebf570620db14f88dd5b70faa0afb5f7aca
 B
 DBFillLocation.sql,a\d\ad0639666698c203e07067a1b854a2b48f77b90c
 c
 3src/test/java/com/ua/glebkorobov/DoScriptsTest.java,4\6\4635e0eaee2effaef7cdc37a5c88ffb777d58404
-e
-5src/test/java/com/ua/glebkorobov/FindProductTest.java,e\f\efa2bbebb2bce2fd082ae0513c9030d6987b8554
 B
 DBCreateTables.sql,e\3\e341d1bcbd8d3f0b5bc9f66133689373d989ec2b
-r
-Bsrc/main/java/com/ua/glebkorobov/filling_tables/FillTypeTable.java,4\3\430766379ce7c5d9a75400a7568d1cdb00b97901
-Z
-*src/main/java/com/ua/glebkorobov/Main.java,a\9\a93951f43c0f3878565fdfb27fb4beb170a209e6
