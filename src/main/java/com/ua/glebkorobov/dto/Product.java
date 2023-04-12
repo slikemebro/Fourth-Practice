@@ -74,4 +74,15 @@ public class Product {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "address=" + address +
+                ", type=" + type +
+                ", quantity=" + quantity +
+                ", name='" + name + '\'' +
+                ", valid=" + valid +
+                '}';
+    }
 }

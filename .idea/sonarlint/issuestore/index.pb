@@ -91,3 +91,15 @@ a
 1src/main/java/com/ua/glebkorobov/GetProperty.java,5\7\571d5ebf570620db14f88dd5b70faa0afb5f7aca
 B
 DBFillLocation.sql,a\d\ad0639666698c203e07067a1b854a2b48f77b90c
+c
+3src/test/java/com/ua/glebkorobov/DoScriptsTest.java,4\6\4635e0eaee2effaef7cdc37a5c88ffb777d58404
+e
+5src/test/java/com/ua/glebkorobov/FindProductTest.java,e\f\efa2bbebb2bce2fd082ae0513c9030d6987b8554
+@
+tables/types.csv,9\3\9347305c090a8f6896bacc320f1b6f4c8af65f0e
+B
+DBCreateTables.sql,e\3\e341d1bcbd8d3f0b5bc9f66133689373d989ec2b
+r
+Bsrc/main/java/com/ua/glebkorobov/filling_tables/FillTypeTable.java,4\3\430766379ce7c5d9a75400a7568d1cdb00b97901
+Z
+*src/main/java/com/ua/glebkorobov/Main.java,a\9\a93951f43c0f3878565fdfb27fb4beb170a209e6
