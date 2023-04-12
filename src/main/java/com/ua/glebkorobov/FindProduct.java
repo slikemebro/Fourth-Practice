@@ -45,7 +45,7 @@ public class FindProduct {
 
     public String getResult(ResultSet resultSet) {
         try {
-            String result = null;
+            String result = "not found";
             while (resultSet.next()) {
                  result = "Address is " + resultSet.getString("address");
             }
