@@ -21,7 +21,8 @@ public class CreateConnectionWithDB {
                 String password = property.getValueFromProperty("rds_password");
                 String hostname = property.getValueFromProperty("rds_hostname");
                 String port = property.getValueFromProperty("rds_port");
-                String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName + "&password=" + password;
+                String jdbcUrl = "jdbc:postgresql://" + hostname + ":" + port + "/" + dbName + "?user=" + userName
+                        + "&password=" + password;
                 logger.trace("Getting remote connection with connection string from environment variables.");
                 Connection con = DriverManager.getConnection(jdbcUrl);
                 logger.info("Remote connection successful.");
@@ -40,6 +41,7 @@ public class CreateConnectionWithDB {
             connection.close();
         } catch (SQLException e) {
             logger.warn(e.toString());
+            throw new CreateDBConnectionException(e);
         }
     }
 }

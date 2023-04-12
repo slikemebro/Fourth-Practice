@@ -19,18 +19,15 @@ public class FindProduct {
 
         try {
             PreparedStatement statement =
-                    connection.prepareStatement("select l.address\n" +
-                            "from\n" +
-                            "    location l,\n" +
-                            "    type t,\n" +
-                            "    goods g\n" +
-                            "where\n" +
-                            "    l.id = g.address\n" +
-                            "    and\n" +
-                            "    t.id = g.name\n" +
-                            "    and\n" +
-                            "    t.name = ?\n" +
-                            "order by g.quantity desc\n" +
+                    connection.prepareStatement("select l.address, sum(quantity) as sum_of_quantity\n" +
+                            "from goods g,\n" +
+                            "     location l,\n" +
+                            "     type t\n" +
+                            "where l.id = g.location_id\n" +
+                            "  and t.id = g.type_id\n" +
+                            "  and t.name = ?\n" +
+                            "group by l.address\n" +
+                            "order by sum_of_quantity desc\n" +
                             "limit 1;");
             statement.setString(1, productName);
             ResultSet resultSet = statement.executeQuery();
@@ -42,8 +39,8 @@ public class FindProduct {
             return resultSet;
         } catch (SQLException e) {
             logger.warn(e.toString());
+            return null;
         }
-        return null;
     }
 
     public String getResult(ResultSet resultSet) {
