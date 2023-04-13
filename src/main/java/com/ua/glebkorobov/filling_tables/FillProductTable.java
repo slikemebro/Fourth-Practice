@@ -101,8 +101,10 @@ public class FillProductTable {
             }
 
             statement.executeBatch();
+
             logger.info("Committing");
             connection.commit();
+
             double time = watch.getTime(TimeUnit.MILLISECONDS) * 0.001;
             logger.info("Fill product time is = {} seconds", time);
             logger.info("Sent {} products", maxProducts);

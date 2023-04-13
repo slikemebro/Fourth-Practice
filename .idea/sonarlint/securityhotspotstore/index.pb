@@ -85,8 +85,6 @@ M
 ,logs/04-02-2023/log4j2/app-04-02-2023-16.log,a\f\af89b84ff5da8bf509113f3ca2f71bff97c516c1
 c
 3src/test/java/com/ua/glebkorobov/DoScriptsTest.java,4\6\4635e0eaee2effaef7cdc37a5c88ffb777d58404
-v
-Fsrc/test/java/com/ua/glebkorobov/filling_tables/FillTypeTableTest.java,6\2\622ad14b68b5479d871a22ed7ffb5ef48cc2cb30
 l
 <src/main/java/com/ua/glebkorobov/CreateConnectionWithDB.java,1\c\1c5b16977c82013844102219666cab0763886730
 v
