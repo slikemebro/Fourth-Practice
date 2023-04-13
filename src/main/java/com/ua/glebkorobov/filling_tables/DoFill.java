@@ -8,10 +8,12 @@ import java.sql.Connection;
 
 public class DoFill {
 
+    private static final String NAME_PROP_FILE = "myProp.properties";
+
     public static void main(String[] args) {
         CreateConnectionWithDB connectionWithDB = new CreateConnectionWithDB();
 
-        GetProperty property = new GetProperty("myProp.properties");
+        GetProperty property = new GetProperty(NAME_PROP_FILE);
         Connection connection = connectionWithDB.getRemoteConnection(property);
 
         DoScripts doScripts = new DoScripts(connection);
@@ -21,7 +23,10 @@ public class DoFill {
         FillTypeTable fillTypeTable = new FillTypeTable();
         fillTypeTable.fill(connection, fillTypeTable.createCSVReader());
 
-        FillGoodsTable fillGoodsTable = new FillGoodsTable(new GetProperty("myProp.properties"));
+        FillProductTable fillProductTable = new FillProductTable(property);
+        fillProductTable.fill(connection);
+
+        FillGoodsTable fillGoodsTable = new FillGoodsTable(property);
         fillGoodsTable.fastFill(connection);
 
         connectionWithDB.closeConnection(connection);

@@ -7,11 +7,7 @@ import jakarta.validation.constraints.Size;
 
 public class Product {
 
-    private int address;
-
     private int type;
-
-    private int quantity;
 
     private String name;
 
@@ -28,21 +24,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(int address, int type, int quantity, String name) {
-        this.address = address;
+    public Product(String name, int type) {
         this.type = type;
-        this.quantity = quantity;
         this.name = name;
-    }
-
-    @Max(value = 9, message = "Value more than possible")
-    @Min(value = 1, message = "Value less than possible")
-    public int getAddress() {
-        return address;
-    }
-
-    public void setAddress(int address) {
-        this.address = address;
     }
 
     @Max(value = 100, message = "Value more than possible")
@@ -53,16 +37,6 @@ public class Product {
 
     public void setType(int type) {
         this.type = type;
-    }
-
-    @Max(value = 300, message = "Value more than possible")
-    @Min(value = 1, message = "Value less than possible")
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
     }
 
     @NotBlank(message = "Element must contain characters and mustn't be null")
@@ -78,9 +52,7 @@ public class Product {
     @Override
     public String toString() {
         return "Product{" +
-                "address=" + address +
-                ", type=" + type +
-                ", quantity=" + quantity +
+                "type=" + type +
                 ", name='" + name + '\'' +
                 ", valid=" + valid +
                 '}';
