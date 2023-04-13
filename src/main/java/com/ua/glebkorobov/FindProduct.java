@@ -19,16 +19,18 @@ public class FindProduct {
 
         try {
             PreparedStatement statement =
-                    connection.prepareStatement("select l.address, sum(quantity) as sum_of_quantity\n" +
-                            "from goods g,\n" +
-                            "     location l,\n" +
-                            "     type t\n" +
-                            "where l.id = g.location_id\n" +
-                            "  and t.id = g.type_id\n" +
-                            "  and t.name = ?\n" +
-                            "group by l.address\n" +
-                            "order by sum_of_quantity desc\n" +
-                            "limit 1;");
+                    connection.prepareStatement(
+                            "SELECT location.address, COUNT(*) AS count\n" +
+                                    "FROM goods\n" +
+                                    "         INNER JOIN product ON goods.product_id = product.id,\n" +
+                                    "     location,\n" +
+                                    "     type\n" +
+                                    "WHERE type.id = product.type_id\n" +
+                                    "  and type.name = ?\n" +
+                                    "  and location.id = goods.location_id\n" +
+                                    "GROUP BY location.address\n" +
+                                    "ORDER BY count DESC\n" +
+                                    "LIMIT 1;");
             statement.setString(1, productName);
             ResultSet resultSet = statement.executeQuery();
 
@@ -47,12 +49,12 @@ public class FindProduct {
         try {
             String result = "not found";
             while (resultSet.next()) {
-                 result = "Address is " + resultSet.getString("address");
+                result = "Address is " + resultSet.getString("address");
             }
             resultSet.close();
             return result;
         } catch (SQLException e) {
-            logger.warn(e.toString());
+            logger.warn("Exception sql ", e);
             return null;
         }
     }
