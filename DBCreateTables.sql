@@ -29,4 +29,4 @@ create table if not exists goods
     quantity    int                          not null
 );
 
--- create index idx on goods (type_id);
+create index idx on goods (product_id);
