@@ -52,9 +52,9 @@ public class FillTypeTable {
 
             statement.close();
         } catch (SQLException e) {
-            logger.warn(e.toString());
+            logger.warn("Sql Exception", e);
         } catch (FileNotFoundException e) {
-            logger.warn(e.toString());
+            logger.warn("File not found exception", e);
             throw new FileFindException(e);
         } catch (IOException | CsvException e) {
             logger.warn(e.toString());

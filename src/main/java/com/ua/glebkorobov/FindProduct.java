@@ -20,7 +20,7 @@ public class FindProduct {
         try {
             PreparedStatement statement =
                     connection.prepareStatement(
-                            "SELECT location.address, COUNT(*) AS count\n" +
+                            "SELECT location.address, sum(quantity) as sum_of_quantity\n" +
                                     "FROM goods\n" +
                                     "         INNER JOIN product ON goods.product_id = product.id,\n" +
                                     "     location,\n" +
@@ -28,9 +28,9 @@ public class FindProduct {
                                     "WHERE type.id = product.type_id\n" +
                                     "  and type.name = ?\n" +
                                     "  and location.id = goods.location_id\n" +
-                                    "GROUP BY location.address\n" +
-                                    "ORDER BY count DESC\n" +
-                                    "LIMIT 1;");
+                                    "group by location.address\n" +
+                                    "order by sum_of_quantity desc\n" +
+                                    "limit 1");
             statement.setString(1, productName);
             ResultSet resultSet = statement.executeQuery();
 
